@@ -1,0 +1,19 @@
+#summary Frequently asked questions.
+
+= Frequently asked questions =
+
+
+== Troubles opening /dev/dsp - Cannot open demuxer. - Capturing audio using ALSA ==
+
+Maybe mencoder is trying to capture the audio using oss, and your mencoder or kernel has no support for it. What you can do is to specify to use alsa.
+
+You can do that by adding *alsa* as an extra tv parameter.
+
+Also you may specify the device if you have multiple inputs, or you are not getting sound.
+
+for example: *alsa:hw.0*
+
+That will record from the first device.
+
+To get a list of devices you may run: 
+{{{aplay -l}}}
