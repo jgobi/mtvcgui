@@ -3,6 +3,7 @@
 = Frequently asked questions =
 
 
+
 == Troubles opening /dev/dsp - Cannot open demuxer. - Capturing audio using ALSA ==
 
 Maybe mencoder is trying to capture the audio using oss, and your mencoder or kernel has no support for it. What you can do is to specify to use alsa.
@@ -15,3 +16,15 @@ That will record from the first device.
 
 To get a list of devices you may run: 
 {{{arecord -l}}}
+
+
+
+== I get a black and white image ==
+
+Black and white image can be probably misconfiguration of the norm.
+
+The program defaults to NTSC (normid=0).
+
+You must adjust this value to the norm used in your country.
+
+A tooltip with normid values will show up if you point over the normid scroll box.
