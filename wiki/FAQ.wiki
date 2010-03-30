@@ -18,6 +18,18 @@ To get a list of devices you may run:
 {{{arecord -l}}}
 
 
+== Recording from another audio source ==
+
+Currently there is no option to select another audio source, but you can specify it as an extra tv parameter.
+
+For example, if your audio device is /dev/dsp1, in the second tab, in the last edit box of the tab, add:
+{{{adevice=/dev/dsp1}}}
+
+
+If you need to add more parameters, join them with a ":", for example:
+{{{outfmt=yuy2:adevice=/dev/dsp1}}}
+
+
 
 == I get a black and white image ==
 
