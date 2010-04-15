@@ -17,6 +17,9 @@ That will record from the first device.
 To get a list of devices you may run: 
 {{{arecord -l}}}
 
+== Recording from another video input ==
+
+TV cards usually have many video inputs such as S-Video, RCA, or others. To record from one of these devices instead of the standard analog cable input, you must change the value of the "Input" edit box which is 0 by default. The value of the other inputs vary between cards, but usually may be 1, 2 or 3.
 
 == Recording from another audio source ==
 
