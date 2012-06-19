@@ -1,0 +1,36 @@
+[mencoder GUI]
+post_command = 
+tvwidth = 
+noskip = False
+lame_audiobitrate = 128
+frequency = 0.0
+duration = 
+pre_command = 
+audiocodec = 3
+outputfile = ./capture_{%channel_%Y%m%d_%H%M%S}.avi
+channel = 22
+extrafilters = pp=hb:a/vb:a/dr:a/al:a/lb:a
+audiorate = 
+lavc_videobitrate = 3000
+input = 0
+norm = 11
+extratvparms = 
+scalewidth = 
+scaleheight = 
+videocodec = 2
+driver = 0
+extramencoderparms = 
+lavc_audiobitrate = 128
+device = /dev/video0
+play_while_recording = False
+ofps = 
+alsa_audio = True
+quiet = True
+tvheight = 
+channel_type = number
+adevice = hw.0
+lavc_videocodec = 0
+chanlist = 0
+append_suffix = True
+lavc_audiocodec = 0
+
