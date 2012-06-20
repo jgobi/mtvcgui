@@ -1,0 +1,2412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>694</width>
+    <height>523</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>mencoder TV Capture GUI</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="runButton">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>450</y>
+      <width>95</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Run</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="outputfile">
+    <property name="geometry">
+     <rect>
+      <x>125</x>
+      <y>360</y>
+      <width>561</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string notr="true">./capture_{%channel_%Y%m%d_%H%M%S}.avi</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>365</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Output File</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="previewButton">
+    <property name="geometry">
+     <rect>
+      <x>505</x>
+      <y>415</y>
+      <width>186</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Preview command</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="previewcommand">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>415</y>
+      <width>506</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string notr="true"/>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="stopButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>450</y>
+      <width>95</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Stop</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>10</y>
+      <width>681</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Main Parameters</string>
+     </attribute>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>131</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Device</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>161</y>
+        <width>96</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Norm</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="driver">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>95</y>
+        <width>121</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string notr="true">v4l2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string notr="true">v4l</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="device">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>125</y>
+        <width>121</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">/dev/video0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>20</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Audio Codec</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="videocodec">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>45</y>
+        <width>201</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string notr="true">null</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>41</y>
+        <width>96</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Channel</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="chanlist">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>215</y>
+        <width>121</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string notr="true">us-cable</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string notr="true">us-bcast</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string notr="true">europe-east</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string notr="true">europe-west</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>221</y>
+        <width>96</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Channels list</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="channel">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>35</y>
+        <width>58</width>
+        <height>26</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>101</y>
+        <width>96</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Driver</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>71</y>
+        <width>96</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Duration</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>50</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Video Codec</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="audiocodec">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>15</y>
+        <width>201</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string notr="true">null</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QTimeEdit" name="duration">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>65</y>
+        <width>121</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="displayFormat">
+       <string>HH:mm:ss</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>191</y>
+        <width>96</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Input</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="lavc_audio_options_box">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>80</y>
+        <width>361</width>
+        <height>106</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>lavc audio options</string>
+      </property>
+      <widget class="QLineEdit" name="lavc_audiobitrate">
+       <property name="geometry">
+        <rect>
+         <x>205</x>
+         <y>50</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string notr="true">128</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>136</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Audio Codec</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>55</y>
+         <width>136</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Audio Bitrate</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="lavc_audiocodec">
+       <property name="geometry">
+        <rect>
+         <x>205</x>
+         <y>25</y>
+         <width>111</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string notr="true">mp2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">libmp3lame</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">ac3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">flac</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">vorbis</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">adpcm_ima_wav</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLineEdit" name="lavc_audio_extra_opts">
+       <property name="geometry">
+        <rect>
+         <x>205</x>
+         <y>75</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_40">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>176</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Extra options (delimited by :)</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QToolButton" name="showAudioCodecsButton">
+      <property name="geometry">
+       <rect>
+        <x>645</x>
+        <y>15</y>
+        <width>27</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">...</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="showVideoCodecsButton">
+      <property name="geometry">
+       <rect>
+        <x>645</x>
+        <y>45</y>
+        <width>27</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true">...</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="number_rb">
+      <property name="geometry">
+       <rect>
+        <x>235</x>
+        <y>15</y>
+        <width>96</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>number</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="freq_rb">
+      <property name="geometry">
+       <rect>
+        <x>235</x>
+        <y>40</y>
+        <width>96</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>frequency</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="frequency">
+      <property name="geometry">
+       <rect>
+        <x>111</x>
+        <y>35</y>
+        <width>121</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="decimals">
+       <number>3</number>
+      </property>
+      <property name="maximum">
+       <double>9999.989999999999782</double>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>260</y>
+        <width>221</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Preview channel with mplayer</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="lavc_video_options_box">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>195</y>
+        <width>361</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>lavc video options</string>
+      </property>
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>60</y>
+         <width>136</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Video Bitrate</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>30</y>
+         <width>136</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Video Codec</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lavc_videobitrate">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>55</y>
+         <width>131</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string notr="true">3000</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="lavc_videocodec">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>25</y>
+         <width>131</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string notr="true">mpeg4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">mjpeg</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">h263</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">h263p</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">mspeg4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">mspeg4v2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">wmv1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">wmv2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">rv10</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">rv20</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">mpeg1video</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">huffyuv</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string notr="true">flv</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLabel" name="label_41">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>90</y>
+         <width>201</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Extra options (delimited by :)</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lavc_video_extra_opts">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>85</y>
+         <width>131</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="lame_options_box">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>80</y>
+        <width>361</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>lame options</string>
+      </property>
+      <widget class="QLabel" name="label_28">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>116</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Audio Bitrate</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lame_audiobitrate">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>25</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string notr="true">128</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="extra_lame_opts_label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>55</y>
+         <width>176</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Extra options (delimited by :)</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lame_extra_opts">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>50</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QComboBox" name="norm">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>155</y>
+        <width>121</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The tool will try to get the supported norms from mplayer based on current value of &amp;quot;Device&amp;quot;. However if this fails you may still enter any value for the norm, either by the norm name or its integer value norm or normid.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="input">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>185</y>
+        <width>121</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The tool will try to get the supported inputs from mplayer based on current value of &amp;quot;Device&amp;quot;. However if this fails you may still enter its integer value&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="x264_options_box">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>195</y>
+        <width>361</width>
+        <height>96</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>x264 options</string>
+      </property>
+      <widget class="QLineEdit" name="x264_bitrate">
+       <property name="geometry">
+        <rect>
+         <x>105</x>
+         <y>25</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;bitrate=&amp;lt;value&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Sets the average bitrate to be used in kbits/second (default: off). Since local bitrate may vary, this average may be inaccurate for very short videos (see ratetol). Constant bitrate can be achieved by combining this with vbv_maxrate, at significant reduction in quality.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="x264_bitrate_label">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>30</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>bitrate</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="x264_qp_label">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>30</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>qp</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="x264_qp">
+       <property name="geometry">
+        <rect>
+         <x>105</x>
+         <y>25</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;qp=&amp;lt;0−51&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;This selects the quantizer to use for P-frames. I- and B-frames are offset from this value by ip_factor and pb_factor, respectively. 20−40 is a useful range (default: 26). Lower values result in better fidelity, but higher bitrates. 0 is lossless. Note that quantization in H.264 works differently from MPEG-1/2/4: H.264’s quantization parameter (QP) is on a logarithmic scale. The mapping is approximately H264QP = 12 + 6*log2(MPEGQP). For example, MPEG at QP=2 is equivalent to H.264 at QP=18.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_39">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>201</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Extra options (delimited by :)</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="x264_extra_opts">
+       <property name="geometry">
+        <rect>
+         <x>215</x>
+         <y>55</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="x264_cbr">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>25</y>
+         <width>80</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>CBR</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="xvid_options_box">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>195</y>
+        <width>361</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>xvid options</string>
+      </property>
+      <widget class="QLabel" name="xvid_bitrate_label">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>25</y>
+         <width>56</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>bitrate</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="xvid_fixed_quant_label">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>25</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>fixed_quant</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_35">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>55</y>
+         <width>76</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>me_quality</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="xvid_bitrate">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>20</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;bitrate=&amp;lt;value&amp;gt; (CBR or two pass mode)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Sets the bitrate to be used in kbits/second if &amp;lt;16000 or in bits/second if &amp;gt;16000. If &amp;lt;value&amp;gt; is negative, XviD will use its absolute value as the target size (in kBytes) of the video and compute the associated bitrate automagically (default: 687 kbits/s).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="xvid_fixed_quant">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>20</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;fixed_quant=&amp;lt;1−31&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Switch to fixed quantizer mode and specify the quantizer to be used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="xvid_me_quality">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>50</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;me_quality=&amp;lt;0−6&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;This option controls the motion estimation subsystem. The higher the value, the more precise the estimation should be (default: 6). The more precise the motion estimation is, the more bits can be saved. Precision is gained at the expense of CPU time so decrease this setting if you need realtime encoding.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="xvid_interlacing">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>45</y>
+         <width>126</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;interlacing&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Encode the fields of interlaced video material. Turn this option on for interlaced content. &lt;/p&gt;&lt;p&gt;NOTE: Should you rescale the video, you would need an interlace-aware resizer, which you can activate with −vf scale=&amp;lt;width&amp;gt;:&amp;lt;height&amp;gt;:1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>interlacing</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="xvid_cartoon">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>70</y>
+         <width>126</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;cartoon&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Activate this if your encoded sequence is an anime/cartoon. It modifies some XviD internal thresholds so XviD takes better decisions on frame types and motion vectors for flat looking cartoons.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>cartoon</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_36">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>100</y>
+         <width>206</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Extra options (delimited by :)</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="xvid_extra_opts">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>95</y>
+         <width>146</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="xvid_cbr">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>20</y>
+         <width>80</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>CBR</string>
+       </property>
+      </widget>
+     </widget>
+     <zorder>xvid_options_box</zorder>
+     <zorder>x264_options_box</zorder>
+     <zorder>label_12</zorder>
+     <zorder>label_6</zorder>
+     <zorder>driver</zorder>
+     <zorder>device</zorder>
+     <zorder>label_8</zorder>
+     <zorder>videocodec</zorder>
+     <zorder>label_2</zorder>
+     <zorder>chanlist</zorder>
+     <zorder>label_7</zorder>
+     <zorder>channel</zorder>
+     <zorder>label_4</zorder>
+     <zorder>label_3</zorder>
+     <zorder>label_9</zorder>
+     <zorder>audiocodec</zorder>
+     <zorder>duration</zorder>
+     <zorder>label_5</zorder>
+     <zorder>lavc_audio_options_box</zorder>
+     <zorder>showAudioCodecsButton</zorder>
+     <zorder>showVideoCodecsButton</zorder>
+     <zorder>number_rb</zorder>
+     <zorder>freq_rb</zorder>
+     <zorder>frequency</zorder>
+     <zorder>pushButton</zorder>
+     <zorder>lavc_video_options_box</zorder>
+     <zorder>lame_options_box</zorder>
+     <zorder>norm</zorder>
+     <zorder>input</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Extra TV Parameters</string>
+     </attribute>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>210</y>
+        <width>521</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Extra tv parameters (delimited by :)</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="extratvparms">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>636</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="tvwidth">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>10</y>
+        <width>113</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="tvheight">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>40</y>
+        <width>113</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>45</y>
+        <width>96</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Height</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Width</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="audiorate">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>70</y>
+        <width>113</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>75</y>
+        <width>81</width>
+        <height>46</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Audio Rate</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>75</y>
+        <width>54</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Hz</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="alsa_audio">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>125</y>
+        <width>321</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Capture audio using ALSA</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="adevice">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>155</y>
+        <width>131</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>You may find the available devices running the command
+aplay --list-devices
+on the console</string>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_25">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>160</y>
+        <width>216</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ALSA device (e.g. hw.0)</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="brightnessSlider">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>15</y>
+        <width>160</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>-100</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="tickPosition">
+       <enum>QSlider::TicksAbove</enum>
+      </property>
+     </widget>
+     <widget class="QSlider" name="contrastSlider">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>45</y>
+        <width>160</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>-100</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="tickPosition">
+       <enum>QSlider::TicksAbove</enum>
+      </property>
+     </widget>
+     <widget class="QSlider" name="hueSlider">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>75</y>
+        <width>160</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>-100</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="tickPosition">
+       <enum>QSlider::TicksAbove</enum>
+      </property>
+     </widget>
+     <widget class="QSlider" name="saturationSlider">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>105</y>
+        <width>160</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>-100</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="tickPosition">
+       <enum>QSlider::TicksAbove</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_29">
+      <property name="geometry">
+       <rect>
+        <x>385</x>
+        <y>15</y>
+        <width>86</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Brightness</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_30">
+      <property name="geometry">
+       <rect>
+        <x>385</x>
+        <y>45</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Contrast</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_31">
+      <property name="geometry">
+       <rect>
+        <x>385</x>
+        <y>75</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Hue</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_32">
+      <property name="geometry">
+       <rect>
+        <x>385</x>
+        <y>105</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Saturation</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Extra Mencoder Parameters</string>
+     </attribute>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>220</y>
+        <width>451</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Extra mencoder parameters (delimited by spaces)</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="extramencoderparms">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>240</y>
+        <width>540</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>15</y>
+        <width>66</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Width</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>45</y>
+        <width>61</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Height</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="scalewidth">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>10</y>
+        <width>113</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="scaleheight">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>40</y>
+        <width>113</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="noskip">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>20</y>
+        <width>156</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>noskip</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="quiet">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>50</y>
+        <width>151</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>quiet</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="ofps">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>70</y>
+        <width>113</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>75</y>
+        <width>61</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>FPS</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="extrafilters">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>180</y>
+        <width>540</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>160</y>
+        <width>456</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Extra filters (delimited by ,)</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Advanced</string>
+     </attribute>
+     <widget class="QLabel" name="label_26">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>15</y>
+        <width>621</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Run this command before capturing:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_27">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>85</y>
+        <width>616</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Run this command after capturing:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="pre_command">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>30</y>
+        <width>626</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="post_command">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>105</y>
+        <width>626</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QDateTimeEdit" name="recording_date">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>270</y>
+        <width>194</width>
+        <height>26</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="scheduleButton">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>270</y>
+        <width>186</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Schedule Recording</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cancel_sheduleButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>270</y>
+        <width>186</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Cancel</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="play_while_recording">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>130</y>
+        <width>636</width>
+        <height>46</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;It is absolutely not recommended to use this! It may consume too much CPU and ruin your capture!! It makes use of the 'tail' command, so it must be available.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>Play recorded file while capture (kind of preview) (NOT RECOMMENDED)</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="setenvvars">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>175</y>
+        <width>611</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Set these environment variables:</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="envvars">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>200</y>
+        <width>626</width>
+        <height>66</height>
+       </rect>
+      </property>
+      <property name="plainText">
+       <string notr="true">LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QCheckBox" name="append_suffix">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>385</y>
+      <width>666</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Append a number suffix if file exists</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="status_label">
+    <property name="geometry">
+     <rect>
+      <x>495</x>
+      <y>455</y>
+      <width>186</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Stopped</string>
+    </property>
+   </widget>
+   <zorder>tabWidget</zorder>
+   <zorder>runButton</zorder>
+   <zorder>outputfile</zorder>
+   <zorder>label</zorder>
+   <zorder>previewButton</zorder>
+   <zorder>previewcommand</zorder>
+   <zorder>stopButton</zorder>
+   <zorder>append_suffix</zorder>
+   <zorder>status_label</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>694</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuPrueba">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <widget class="QMenu" name="menuChange_language">
+     <property name="title">
+      <string>Change language</string>
+     </property>
+     <addaction name="actionEnglish"/>
+     <addaction name="actionSpanish"/>
+     <addaction name="actionSpanish_Argentina"/>
+     <addaction name="actionItalian"/>
+    </widget>
+    <addaction name="actionSave_configuration"/>
+    <addaction name="actionReload_configuration"/>
+    <addaction name="menuChange_language"/>
+    <addaction name="actionSalir"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout_mtvcgui"/>
+   </widget>
+   <addaction name="menuPrueba"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionSave_configuration">
+   <property name="text">
+    <string>Save configuration</string>
+   </property>
+  </action>
+  <action name="actionAbout_mtvcgui">
+   <property name="text">
+    <string>About mtvcgui</string>
+   </property>
+  </action>
+  <action name="actionReload_configuration">
+   <property name="text">
+    <string>Restore saved configuration</string>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actionSpanish">
+   <property name="text">
+    <string>Spanish</string>
+   </property>
+  </action>
+  <action name="actionSpanish_Argentina">
+   <property name="text">
+    <string>Spanish (Argentina)</string>
+   </property>
+  </action>
+  <action name="actionItalian">
+   <property name="text">
+    <string>Italian</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>runButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>run_mencoder()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>493</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>385</x>
+     <y>332</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>previewButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>preview_command()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>570</x>
+     <y>458</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>490</x>
+     <y>469</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSalir</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>324</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>stopButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>stop_button_pressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>397</x>
+     <y>493</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>528</x>
+     <y>526</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSave_configuration</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>save_configuration()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>324</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAbout_mtvcgui</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>show_about_dialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>showAudioCodecsButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>show_available_audio_codecs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>671</x>
+     <y>91</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>showVideoCodecsButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>show_available_video_codecs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>679</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>number_rb</sender>
+   <signal>clicked()</signal>
+   <receiver>frequency</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>261</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>number_rb</sender>
+   <signal>clicked()</signal>
+   <receiver>channel</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>261</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freq_rb</sender>
+   <signal>clicked()</signal>
+   <receiver>channel</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>261</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>freq_rb</sender>
+   <signal>clicked()</signal>
+   <receiver>frequency</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>261</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>scheduleButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>shedule_recording()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>331</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>90</x>
+     <y>475</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cancel_sheduleButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>cancel_shedule()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>545</x>
+     <y>331</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionReload_configuration</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>set_params_from_config()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>preview_with_mplayer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>350</x>
+     <y>487</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>audiocodec</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>audio_codec_selected(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>488</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>24</x>
+     <y>486</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>videocodec</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>video_codec_selected(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>525</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>60</x>
+     <y>491</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>channel</sender>
+   <signal>valueChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>channel_changed(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>127</x>
+     <y>106</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>frequency</sender>
+   <signal>valueChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>frequency_changed(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>157</x>
+     <y>106</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>brightnessSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>brightness_changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>578</x>
+     <y>85</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>contrastSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>contrast_changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>530</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>131</x>
+     <y>244</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>hueSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hue_changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>535</x>
+     <y>142</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>192</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>saturationSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>saturation_changed(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>617</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>520</x>
+     <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>device</sender>
+   <signal>editingFinished()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update_device_values()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>120</x>
+     <y>192</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>100</x>
+     <y>463</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEnglish</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changeToEnglish()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSpanish</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changeToSpanish()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSpanish_Argentina</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changeToSpanish_Argentina()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionItalian</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changeToItalian()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>xvid_cbr</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>set_xvid_cbr(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>286</x>
+     <y>256</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>497</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>x264_cbr</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>set_x264_cbr(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>559</x>
+     <y>279</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>567</x>
+     <y>497</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>run_mencoder()</slot>
+  <slot>preview_command()</slot>
+  <slot>stop_button_pressed()</slot>
+  <slot>save_configuration()</slot>
+  <slot>show_about_dialog()</slot>
+  <slot>show_available_audio_codecs()</slot>
+  <slot>show_available_video_codecs()</slot>
+  <slot>shedule_recording()</slot>
+  <slot>cancel_shedule()</slot>
+  <slot>set_params_from_config()</slot>
+  <slot>preview_with_mplayer()</slot>
+  <slot>audio_codec_selected(int)</slot>
+  <slot>video_codec_selected(int)</slot>
+  <slot>channel_changed(QString)</slot>
+  <slot>frequency_changed(QString)</slot>
+  <slot>brightness_changed(int)</slot>
+  <slot>contrast_changed(int)</slot>
+  <slot>hue_changed(int)</slot>
+  <slot>saturation_changed(int)</slot>
+  <slot>norm_changed(int)</slot>
+  <slot>update_device_values()</slot>
+  <slot>changeToEnglish()</slot>
+  <slot>changeToSpanish()</slot>
+  <slot>changeToSpanish_Argentina()</slot>
+  <slot>changeToItalian()</slot>
+  <slot>set_xvid_cbr(bool)</slot>
+  <slot>set_x264_cbr(bool)</slot>
+ </slots>
+</ui>
